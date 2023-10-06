@@ -4,8 +4,7 @@
 
 View it [here](https://jsclampet.github.io/clockapp-sdmm-third-assignment/)
 
-
-![preview](src/Screenshot 2023-10-06 at 3.23.16 AM.png)
+![preview](src/clock_preview.png)
 
 ## Summary 
 
