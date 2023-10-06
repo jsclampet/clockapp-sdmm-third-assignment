@@ -30,9 +30,14 @@ h1 {
   display: flex;
   justify-content: center;
   margin: auto;
+  margin-bottom: 20px;
 }
 
 .clock p {
   font-size: 80px;
   font-weight: 700;
+}
+
+#full-date {
+  text-align: center;
 }

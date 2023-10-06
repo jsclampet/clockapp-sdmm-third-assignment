@@ -23,6 +23,10 @@ const months = [
   "December",
 ];
 
+const convertToDoubleDigit = (num) => {
+  return num < 10 ? "0" + num : num;
+};
+
 setInterval(() => {
   let today = new Date();
 
@@ -32,15 +36,34 @@ setInterval(() => {
   let timeOfDay = document.getElementById("timeOfDay");
 
   timeOfDay.textContent = today.getHours < 12 ? "am" : "pm";
-  hour.textContent = parseInt(today.getHours()) % 12;
-  minute.textContent = today.getMinutes();
-  second.textContent = today.getSeconds();
+  hour.textContent = convertToDoubleDigit(parseInt(today.getHours()) % 12);
+  minute.textContent = convertToDoubleDigit(today.getMinutes());
+  second.textContent = convertToDoubleDigit(today.getSeconds());
 
   let dayOfWeek = daysOfWeek[today.getDay()];
   let month = months[today.getMonth()];
+  let dayOfMonth = today.getDay();
+  let year = today.getFullYear();
 
-  let testContent = document.getElementById("test-content");
-  testContent.textContent = month + " " + dayOfWeek;
+  let suffix;
+  switch (
+    dayOfMonth < 10 ? dayOfMonth : dayOfMonth.split("")[dayOfMonth.length - 1]
+  ) {
+    case 1:
+      suffix = "st";
+      break;
+    case 2:
+      suffix = "nd";
+      break;
+    case 3:
+      suffix = "rd";
+      break;
+    default:
+      suffix = "th";
+  }
+
+  let fullDate = document.getElementById("full-date");
+  fullDate.textContent = `${dayOfWeek}, ${month} ${dayOfMonth}${suffix} ${year}`;
 }, 1000);
 
 let today = new Date();
