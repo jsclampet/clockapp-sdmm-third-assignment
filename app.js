@@ -1,11 +1,11 @@
 const daysOfWeek = [
+  "Sunday",
   "Monday",
-  "Wednesday",
   "Tuesday",
+  "Wednesday",
   "Thursday",
   "Friday",
   "Saturday",
-  "Sunday",
 ];
 
 const months = [
@@ -42,7 +42,7 @@ setInterval(() => {
 
   let dayOfWeek = daysOfWeek[today.getDay()];
   let month = months[today.getMonth()];
-  let dayOfMonth = today.getDay();
+  let dayOfMonth = today.getDate();
   let year = today.getFullYear();
 
   let suffix;
@@ -68,3 +68,4 @@ setInterval(() => {
 
 let today = new Date();
 console.log(today.getDate());
+console.log(today.getDay());
