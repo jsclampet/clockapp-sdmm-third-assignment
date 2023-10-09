@@ -2,7 +2,7 @@
 
 *A digital clock app written in HTML, CSS and Vanilla JS*
 
-View it [here](https://jsclampet.github.io/clockapp-sdmm-third-assignment/)
+View it [here](https://clockapp-sdmm-third-assignment.pages.dev/)
 
 ![preview](src/clock_preview.png)
 
