@@ -47,7 +47,7 @@ setInterval(() => {
 
   let suffix;
   switch (
-    dayOfMonth < 10 ? dayOfMonth : dayOfMonth.split("")[dayOfMonth.length - 1]
+    dayOfMonth < 10 ? dayOfMonth : String(dayOfMonth).split("")[dayOfMonth.length - 1]
   ) {
     case 1:
       suffix = "st";
