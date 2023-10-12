@@ -28,22 +28,31 @@ const convertToDoubleDigit = (num) => {
 };
 
 setInterval(() => {
-  let today = new Date();
+  setDate();
+  setTime();
+}, 1000);
 
-  let hour = document.getElementById("hour");
-  let minute = document.getElementById("minute");
-  let second = document.getElementById("second");
-  let timeOfDay = document.getElementById("timeOfDay");
+function setTime(){
+  const today = new Date();
+
+  const hour = document.getElementById("hour");
+  const minute = document.getElementById("minute");
+  const second = document.getElementById("second");
+  const timeOfDay = document.getElementById("timeOfDay");
 
   timeOfDay.textContent = today.getHours < 12 ? "am" : "pm";
   hour.textContent = convertToDoubleDigit(parseInt(today.getHours()) % 12);
   minute.textContent = convertToDoubleDigit(today.getMinutes());
   second.textContent = convertToDoubleDigit(today.getSeconds());
+}
 
-  let dayOfWeek = daysOfWeek[today.getDay()];
-  let month = months[today.getMonth()];
-  let dayOfMonth = today.getDate();
-  let year = today.getFullYear();
+function setDate(){
+  const today = new Date();
+
+  const dayOfWeek = daysOfWeek[today.getDay()];
+  const month = months[today.getMonth()];
+  const dayOfMonth = today.getDate();
+  const year = today.getFullYear();
 
   let suffix;
   switch (
@@ -64,8 +73,4 @@ setInterval(() => {
 
   let fullDate = document.getElementById("full-date");
   fullDate.textContent = `${dayOfWeek}, ${month} ${dayOfMonth}${suffix} ${year}`;
-}, 1000);
-
-let today = new Date();
-console.log(today.getDate());
-console.log(today.getDay());
+}
