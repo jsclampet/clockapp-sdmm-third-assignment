@@ -23,14 +23,14 @@ const months = [
   "December",
 ];
 
-const convertToDoubleDigit = (num) => {
-  return num < 10 ? "0" + num : num;
-};
-
 setInterval(() => {
   setDate();
   setTime();
 }, 1000);
+
+function convertToDoubleDigit(num){
+  return num < 10 ? "0" + num : num;
+};
 
 function setTime(){
   const today = new Date();
