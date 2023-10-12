@@ -23,6 +23,9 @@ const months = [
   "December",
 ];
 
+setDate();
+setTime();
+
 setInterval(() => {
   setDate();
   setTime();
